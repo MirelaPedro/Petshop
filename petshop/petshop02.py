@@ -997,6 +997,8 @@ def pesquisar_banho():
 	botao_voltar.bind("<Enter>", lambda event: botao_voltar.config(bg='#000842', fg='white'))
 	botao_voltar.bind("<Leave>", lambda event: botao_voltar.config(bg='white', fg='#000842',))
 
+###############DEF'S EXCLUIR 
+
 def excluir_funcionario():
 	for widget in petshop.winfo_children():
 		widget.destroy()
