@@ -204,7 +204,7 @@ def cadastrar_clientes():
 	for widget in petshop.winfo_children():
 		widget.destroy()
 
-	texto = tk.Label(petshop, text="CONFIGURAÇÕES DE VENDAS", font="Arial 30 bold", bg="lightblue", fg="#000842")
+	texto = tk.Label(petshop, text="CADASTRO DE PROPRIETÁRIOS", font="Arial 30 bold", bg="lightblue", fg="#000842")
 	texto.pack()
 	texto.place(relx=0.5, rely=0.1, anchor="center")
 
@@ -696,11 +696,11 @@ def pesquisar_funcionario():
 	texto = tk.Label(petshop, text="O QUE VOCÊ DESEJA PESQUISAR DOS FUNCIONÁRIOS?", font="Arial 45 bold", bg="lightblue", fg="#000842")
 	texto.place(relx=0.5, rely=0.2, anchor="center")
 	
-	caixa_pesquisa_estoque = tk.Entry(petshop, width=120)
-	caixa_pesquisa_estoque.pack()
-	caixa_pesquisa_estoque.place(relx=0.45, rely=0.3, anchor="center")
+	caixa_pesquisa = tk.Entry(petshop, width=120)
+	caixa_pesquisa.pack()
+	caixa_pesquisa.place(relx=0.45, rely=0.3, anchor="center")
 
-	botao_pesquisar = tk.Button(petshop, text="PESQUISAR", width='20', height='0', font="Arial 10 bold", fg="#000842",command= lambda: teste(chekbox_funcionario))
+	botao_pesquisar = tk.Button(petshop, text="PESQUISAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
 	botao_pesquisar.pack()
 	botao_pesquisar.place(relx=0.7, rely=0.3, anchor="center")
 
@@ -742,15 +742,14 @@ def pesquisar_funcionario():
 	todos.pack()
 	todos.place(relx=0.65, rely=0.4, anchor="center", width=100)
 
-	chekbox_funcionario = [codigo.get(), nome.get(), telefone.get(), cargo.get(), salario.get(), cep.get(), todos.get()]
-
-#BOTÃO NÃO FUNCIONA
-""" 	botao_voltar = tk.Button(petshop, text="VOLTAR AO MENU", width='20', height='0', font="Arial 10 bold", fg="#000842", command=voltar)
+	botao_voltar = tk.Button(petshop, text="VOLTAR AO MENU", width='20', height='0', font="Arial 10 bold", fg="#000842", command=voltar)
 	botao_voltar.pack()
 	botao_voltar.place(relx=0.5, rely=0.95, anchor="center")
 
 	botao_voltar.bind("<Enter>", lambda event: botao_voltar.config(bg='#000842', fg='white'))
-	botao_voltar.bind("<Leave>", lambda event: botao_voltar.config(bg='white', fg='#000842',)) """
+	botao_voltar.bind("<Leave>", lambda event: botao_voltar.config(bg='white', fg='#000842',))
+
+""" 	chekbox_funcionario = [codigo.get(), nome.get(), telefone.get(), cargo.get(), salario.get(), cep.get(), todos.get()] """
 
 def pesquisar_clientes():
 	for widget in petshop.winfo_children():
@@ -830,7 +829,7 @@ def pesquisar_animal():
 	nome.pack()
 	nome.place(relx=0.3, rely=0.4, anchor="center", width=100)
 
-	raca = IntVar()
+	especie = IntVar()
 	especie = tk.Checkbutton(petshop, text="espécie", variable = especie, onvalue=1, offvalue=0)
 	especie.pack()
 	especie.place(relx=0.35, rely=0.4, anchor="center", width=100)
@@ -870,13 +869,12 @@ def pesquisar_animal():
 	todos.pack()
 	todos.place(relx=0.7, rely=0.4, anchor="center", width=95)
 
-##botão não funciona
-""" 	botao_voltar = tk.Button(petshop, text="VOLTAR AO MENU", width='20', height='0', font="Arial 10 bold", fg="#000842", command=voltar)
+	botao_voltar = tk.Button(petshop, text="VOLTAR AO MENU", width='20', height='0', font="Arial 10 bold", fg="#000842", command=voltar)
 	botao_voltar.pack()
 	botao_voltar.place(relx=0.5, rely=0.95, anchor="center")
 
 	botao_voltar.bind("<Enter>", lambda event: botao_voltar.config(bg='#000842', fg='white'))
-	botao_voltar.bind("<Leave>", lambda event: botao_voltar.config(bg='white', fg='#000842',)) """
+	botao_voltar.bind("<Leave>", lambda event: botao_voltar.config(bg='white', fg='#000842',))
 
 def pesquisar_banho():
 	for widget in petshop.winfo_children():
@@ -988,46 +986,6 @@ def excluir_clientes():
 	botao_excluir.bind("<Enter>", lambda event: botao_excluir.config(bg='#000842', fg='white'))
 	botao_excluir.bind("<Leave>", lambda event: botao_excluir.config(bg='white', fg='#000842',))
 
-	codigo = IntVar()
-	codigo = tk.Checkbutton(petshop, text="código", variable = codigo, onvalue=1, offvalue=0)
-	codigo.pack()
-	codigo.place(relx=0.3, rely=0.4, anchor="center", width=100)
-
-	horario = IntVar()
-	horario = tk.Checkbutton(petshop, text="horário", variable = horario, onvalue=1, offvalue=0)
-	horario.pack()
-	horario.place(relx=0.35, rely=0.4, anchor="center", width=100)
-
-	data = IntVar()
-	data = tk.Checkbutton(petshop, text="espécie", variable = data, onvalue=1, offvalue=0)
-	data.pack()
-	data.place(relx=0.4, rely=0.4, anchor="center", width=100)
-
-	tipo = IntVar()
-	tipo = tk.Checkbutton(petshop, text="raça", variable = tipo, onvalue=1, offvalue=0)
-	tipo.pack()
-	tipo.place(relx=0.45, rely=0.4, anchor="center", width=100)
-	
-	valor = IntVar()
-	valor = tk.Checkbutton(petshop, text="valor", variable = valor, onvalue=1, offvalue=0)
-	valor.pack()
-	valor.place(relx=0.55, rely=0.4, anchor="center", width=100)
-	
-	idanimal = IntVar()
-	idanimal = tk.Checkbutton(petshop, text="idanimal", variable = idanimal, onvalue=1, offvalue=0)
-	idanimal.pack()
-	idanimal.place(relx=0.6, rely=0.4, anchor="center", width=100)
-
-	idfuncionario = IntVar()
-	idfuncionario = tk.Checkbutton(petshop, text="idfuncionario", variable = idfuncionario, onvalue=1, offvalue=0)
-	idfuncionario.pack()
-	idfuncionario.place(relx=0.65, rely=0.4, anchor="center", width=100)
-
-	todos = IntVar()
-	todos = tk.Checkbutton(petshop, text="todos", variable = todos, onvalue=1, offvalue=0)
-	todos.pack()
-	todos.place(relx=0.7, rely=0.4, anchor="center", width=95)
-
 	botao_voltar = tk.Button(petshop, text="VOLTAR AO MENU", width='20', height='0', font="Arial 10 bold", fg="#000842", command=voltar)
 	botao_voltar.pack()
 	botao_voltar.place(relx=0.5, rely=0.95, anchor="center")
@@ -1045,21 +1003,21 @@ def excluir_animais():
 	caixa_pesquisa = tk.Entry(petshop, width=120)
 	caixa_pesquisa.pack()
 	caixa_pesquisa.place(relx=0.45, rely=0.3, anchor="center")
-
-	botao_excluir = tk.Button(petshop, text="EXCLUIR", width='20', height='0', font="Arial 10 bold", fg="#00084")
+	
+	botao_excluir = tk.Button(petshop, text="EXCLUIR", width='20', height='0', font="Arial 10 bold", fg="#000842")
 	botao_excluir.pack()
 	botao_excluir.place(relx=0.7, rely=0.3, anchor="center")
 
 	botao_excluir.bind("<Enter>", lambda event: botao_excluir.config(bg='#000842', fg='white'))
-	botao_excluir.bind("<Leave>", lambda event: botao_excluir.config(bg='white', fg='#000842',))
+	botao_excluir.bind("<Leave>", lambda event: botao_excluir.config(bg='white', fg='#000842'))
 
-###bOTÃO NÃO FUNCIONA
-""" 	botao_voltar = tk.Button(petshop, text="VOLTAR AO MENU", width='20', height='0', font="Arial 10 bold", fg="#000842", command=voltar)
+
+	botao_voltar = tk.Button(petshop, text="VOLTAR AO MENU", width='20', height='0', font="Arial 10 bold", fg="#000842", command=voltar)
 	botao_voltar.pack()
 	botao_voltar.place(relx=0.5, rely=0.95, anchor="center")
 
 	botao_voltar.bind("<Enter>", lambda event: botao_voltar.config(bg='#000842', fg='white'))
-	botao_voltar.bind("<Leave>", lambda event: botao_voltar.config(bg='white', fg='#000842',)) """
+	botao_voltar.bind("<Leave>", lambda event: botao_voltar.config(bg='white', fg='#000842'))
 
 def excluir_banho():
 	for widget in petshop.winfo_children():
