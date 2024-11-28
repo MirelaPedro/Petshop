@@ -438,7 +438,7 @@ def alterar_funcionario():
 	texto_estoque.pack()
 	texto_estoque.place(relx=0.5, rely=0.1, anchor="center")
 
-	codigo_altetipoo = tk.Label(petshop, text="ID DE ALTERAÇÃO: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
+	codigo_alteracao = tk.Label(petshop, text="ID DE ALTERAÇÃO: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
 	codigo_alteracao.pack()
 	codigo_alteracao.place(relx=0.4, rely=0.2, anchor="center")
 	caixa_codigo = tk.Entry(petshop, width=68)
