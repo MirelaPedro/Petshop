@@ -127,8 +127,7 @@ def voltar():
 	botao_financas4.bind("<Enter>", lambda event: botao_financas4.config(bg='#000842', fg='white'))
 	botao_financas4.bind("<Leave>", lambda event: botao_financas4.config(bg='white', fg='#000842',))
 
-##############DEF'S CADASTRAR
-		
+##############DEF'S CADASTRAR		
 def cadastrar_funcionario():
 	for widget in petshop.winfo_children():
 		widget.destroy()
@@ -218,17 +217,81 @@ def cadastrar_clientes():
 
 	nome = tk.Label(petshop, text="NOME: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
 	nome.pack()
-	nome.place(relx=0.4, rely=0.3, anchor="center")
+	nome.place(relx=0.4, rely=0.25, anchor="center")
 	caixa_nome = tk.Entry(petshop, width=75)
 	caixa_nome.pack()
 	caixa_nome.place(relx=0.55, rely=0.25, anchor="center")
 
 	telefone = tk.Label(petshop, text="TELEFONE: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
 	telefone.pack()
-	telefone.place(relx=0.4, rely=0.35, anchor="center")
-	caixa_telefone = tk.Entry(petshop, width=50)
+	telefone.place(relx=0.4, rely=0.3, anchor="center")
+	caixa_telefone = tk.Entry(petshop, width=70)
 	caixa_telefone.pack()
-	caixa_telefone.place(relx=0.56, rely=0.35, anchor="center")
+	caixa_telefone.place(relx=0.56, rely=0.3, anchor="center")
+
+	cep = tk.Label(petshop, text="CEP: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
+	cep.pack()
+	cep.place(relx=0.4, rely=0.35, anchor="center")
+	caixa_cep = tk.Entry(petshop, width=75)
+	caixa_cep.pack()
+	caixa_cep.place(relx=0.55, rely=0.35, anchor="center")
+
+	botao_cadastrar = tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+	botao_cadastrar.pack()
+	botao_cadastrar.place(relx=0.4, rely=0.4, anchor="center")
+
+	botao_cadastrar.bind("<Enter>", lambda event: botao_cadastrar.config(bg='#000842', fg='white'))
+	botao_cadastrar.bind("<Leave>", lambda event: botao_cadastrar.config(bg='white', fg='#000842',))
+
+	botao_limpar = tk.Button(petshop, text="LIMPAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+	botao_limpar.pack()
+	botao_limpar.place(relx=0.5, rely=0.4, anchor="center")
+
+	botao_limpar.bind("<Enter>", lambda event: botao_limpar.config(bg='#000842', fg='white'))
+	botao_limpar.bind("<Leave>", lambda event: botao_limpar.config(bg='white', fg='#000842',))
+
+	botao_voltar = tk.Button(petshop, text="VOLTAR AO MENU", width='20', height='0', font="Arial 10 bold", fg="#000842", command=voltar)
+	botao_voltar.pack()
+	botao_voltar.place(relx=0.6, rely=0.4, anchor="center")
+
+	botao_voltar.bind("<Enter>", lambda event: botao_voltar.config(bg='#000842', fg='white'))
+	botao_voltar.bind("<Leave>", lambda event: botao_voltar.config(bg='white', fg='#000842',))
+
+def cadastrar_banho():
+	for widget in petshop.winfo_children():
+		widget.destroy()
+
+	texto = tk.Label(petshop, text="CADASTRAR DE ANIMAIS", font="Arial 30 bold", bg="lightblue", fg="#000842")
+	texto.pack()
+	texto.place(relx=0.5, rely=0.1, anchor="center")
+
+	codigo = tk.Label(petshop, text="CÓDIGO: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
+	codigo.pack()
+	codigo.place(relx=0.4, rely=0.2, anchor="center")
+	caixa_codigo = tk.Entry(petshop, width=75)
+	caixa_codigo.pack()
+	caixa_codigo.place(relx=0.55, rely=0.2, anchor="center")
+
+	nome = tk.Label(petshop, text="NOME: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
+	nome.pack()
+	nome.place(relx=0.4, rely=0.25, anchor="center")
+	caixa_nome = tk.Entry(petshop, width=75)
+	caixa_nome.pack()
+	caixa_nome.place(relx=0.55, rely=0.25, anchor="center")
+
+	especie = tk.Label(petshop, text="ESPÉCIE: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
+	especie.pack()
+	especie.place(relx=0.4, rely=0.3, anchor="center")
+	caixa_especie = tk.Entry(petshop, width=75)
+	caixa_especie.pack()
+	caixa_especie.place(relx=0.55, rely=0.3, anchor="center")
+
+	raca = tk.Label(petshop, text="RAÇA: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
+	raca.pack()
+	raca.place(relx=0.4, rely=0.35, anchor="center")
+	caixa_raca = tk.Entry(petshop, width=68)
+	caixa_raca.pack()
+	caixa_raca.place(relx=0.56, rely=0.35, anchor="center")
 
 	valor_venda = tk.Label(petshop, text="VALOR DA VENDA: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
 	valor_venda.pack()
@@ -276,85 +339,7 @@ def cadastrar_animais():
 	for widget in petshop.winfo_children():
 		widget.destroy()
 
-	texto = tk.Label(petshop, text="CONFIGURAÇÕES DE ANIMAIS", font="Arial 30 bold", bg="lightblue", fg="#000842")
-	texto.pack()
-	texto.place(relx=0.5, rely=0.1, anchor="center")
-
-	codigo = tk.Label(petshop, text="CÓDIGO: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
-	codigo.pack()
-	codigo.place(relx=0.4, rely=0.2, anchor="center")
-	caixa_codigo = tk.Entry(petshop, width=75)
-	caixa_codigo.pack()
-	caixa_codigo.place(relx=0.55, rely=0.2, anchor="center")
-
-	tipo = tk.Label(petshop, text="TIPO: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
-	tipo.pack()
-	tipo.place(relx=0.4, rely=0.25, anchor="center")
-	caixa_tipo = tk.Entry(petshop, width=75)
-	caixa_tipo.pack()
-	caixa_tipo.place(relx=0.55, rely=0.25, anchor="center")
-
-	nome = tk.Label(petshop, text="NOME: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
-	nome.pack()
-	nome.place(relx=0.4, rely=0.3, anchor="center")
-	caixa_nome = tk.Entry(petshop, width=75)
-	caixa_nome.pack()
-	caixa_nome.place(relx=0.55, rely=0.3, anchor="center")
-
-	quantidade = tk.Label(petshop, text="QUANTIDADE: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
-	quantidade.pack()
-	quantidade.place(relx=0.4, rely=0.35, anchor="center")
-	caixa_quantidade = tk.Entry(petshop, width=68)
-	caixa_quantidade.pack()
-	caixa_quantidade.place(relx=0.56, rely=0.35, anchor="center")
-
-	valor_venda = tk.Label(petshop, text="VALOR DA VENDA: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
-	valor_venda.pack()
-	valor_venda.place(relx=0.4, rely=0.4, anchor="center")
-	caixa_valor_venda = tk.Entry(petshop, width=60)
-	caixa_valor_venda.pack()
-	caixa_valor_venda.place(relx=0.57, rely=0.4, anchor="center")
-
-	valor_compra = tk.Label(petshop, text="VALOR DA COMPRA: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
-	valor_compra.pack()
-	valor_compra.place(relx=0.4, rely=0.45, anchor="center")
-	caixa_valor_compra = tk.Entry(petshop, width=60)
-	caixa_valor_compra.pack()
-	caixa_valor_compra.place(relx=0.57, rely=0.45, anchor="center")
-
-	disponibilidade = tk.Label(petshop, text="DISPONIBILIDADE: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
-	disponibilidade.pack()
-	disponibilidade.place(relx=0.4, rely=0.5, anchor="center")
-	caixa_disponibilidade = tk.Entry(petshop, width=60)
-	caixa_disponibilidade.pack()
-	caixa_disponibilidade.place(relx=0.57, rely=0.5, anchor="center")
-
-	botao_cadastrar = tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
-	botao_cadastrar.pack()
-	botao_cadastrar.place(relx=0.4, rely=0.6, anchor="center")
-
-	botao_cadastrar.bind("<Enter>", lambda event: botao_cadastrar.config(bg='#000842', fg='white'))
-	botao_cadastrar.bind("<Leave>", lambda event: botao_cadastrar.config(bg='white', fg='#000842',))
-
-	botao_limpar = tk.Button(petshop, text="LIMPAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
-	botao_limpar.pack()
-	botao_limpar.place(relx=0.5, rely=0.6, anchor="center")
-
-	botao_limpar.bind("<Enter>", lambda event: botao_limpar.config(bg='#000842', fg='white'))
-	botao_limpar.bind("<Leave>", lambda event: botao_limpar.config(bg='white', fg='#000842',))
-
-	botao_voltar = tk.Button(petshop, text="VOLTAR AO MENU", width='20', height='0', font="Arial 10 bold", fg="#000842", command=voltar)
-	botao_voltar.pack()
-	botao_voltar.place(relx=0.6, rely=0.6, anchor="center")
-
-	botao_voltar.bind("<Enter>", lambda event: botao_voltar.config(bg='#000842', fg='white'))
-	botao_voltar.bind("<Leave>", lambda event: botao_voltar.config(bg='white', fg='#000842',))
-
-def cadastrar_banho():
-	for widget in petshop.winfo_children():
-		widget.destroy()
-
-	texto_estoque = tk.Label(petshop, text="CONFIGURAÇÕES DE BANHO E TOSA", font="Arial 30 bold", bg="lightblue", fg="#000842")
+	texto_estoque = tk.Label(petshop, text="CADASTRO DO ANIMAL", font="Arial 30 bold", bg="lightblue", fg="#000842")
 	texto_estoque.pack()
 	texto_estoque.place(relx=0.5, rely=0.1, anchor="center")
 
@@ -379,51 +364,65 @@ def cadastrar_banho():
 	caixa_nome.pack()
 	caixa_nome.place(relx=0.55, rely=0.3, anchor="center")
 
-	quantidade = tk.Label(petshop, text="QUANTIDADE: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
-	quantidade.pack()
-	quantidade.place(relx=0.4, rely=0.35, anchor="center")
-	caixa_quantidade = tk.Entry(petshop, width=68)
-	caixa_quantidade.pack()
-	caixa_quantidade.place(relx=0.56, rely=0.35, anchor="center")
+	peso = tk.Label(petshop, text="PESO: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
+	peso.pack()
+	peso.place(relx=0.4, rely=0.35, anchor="center")
+	caixa_peso = tk.Entry(petshop, width=68)
+	caixa_peso.pack()
+	caixa_peso.place(relx=0.56, rely=0.35, anchor="center")
 
-	valor_venda = tk.Label(petshop, text="VALOR DA VENDA: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
-	valor_venda.pack()
-	valor_venda.place(relx=0.4, rely=0.4, anchor="center")
-	caixa_valor_venda = tk.Entry(petshop, width=60)
-	caixa_valor_venda.pack()
-	caixa_valor_venda.place(relx=0.57, rely=0.4, anchor="center")
+	altura = tk.Label(petshop, text="ALTURA: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
+	altura.pack()
+	altura.place(relx=0.4, rely=0.4, anchor="center")
+	caixa_altura = tk.Entry(petshop, width=60)
+	caixa_altura.pack()
+	caixa_altura.place(relx=0.57, rely=0.4, anchor="center")
 
-	valor_compra = tk.Label(petshop, text="VALOR DA COMPRA: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
-	valor_compra.pack()
-	valor_compra.place(relx=0.4, rely=0.45, anchor="center")
-	caixa_valor_compra = tk.Entry(petshop, width=60)
-	caixa_valor_compra.pack()
-	caixa_valor_compra.place(relx=0.57, rely=0.45, anchor="center")
+	idade = tk.Label(petshop, text="IDADE: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
+	idade.pack()
+	idade.place(relx=0.4, rely=0.45, anchor="center")
+	caixa_idade = tk.Entry(petshop, width=60)
+	caixa_idade.pack()
+	caixa_idade.place(relx=0.57, rely=0.45, anchor="center")
 
-	disponibilidade = tk.Label(petshop, text="DISPONIBILIDADE: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
-	disponibilidade.pack()
-	disponibilidade.place(relx=0.4, rely=0.5, anchor="center")
-	caixa_disponibilidade = tk.Entry(petshop, width=60)
-	caixa_disponibilidade.pack()
-	caixa_disponibilidade.place(relx=0.57, rely=0.5, anchor="center")
+	cor = tk.Label(petshop, text="COR: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
+	cor.pack()
+	cor.place(relx=0.4, rely=0.5, anchor="center")
+	caixa_cor = tk.Entry(petshop, width=60)
+	caixa_cor.pack()
+	caixa_cor.place(relx=0.57, rely=0.5, anchor="center")
+
+	idproprietario = tk.Label(petshop, text="IDPROPRIETÁRIO: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
+	idproprietario.pack()
+	idproprietario.place(relx=0.4, rely=0.55, anchor="center")
+	caixa_idproprietario = tk.Entry(petshop, width=60)
+	caixa_idproprietario.pack()
+	caixa_idproprietario.place(relx=0.57, rely=0.55, anchor="center")
+
+	idfuncionario = tk.Label(petshop, text="IDFUNCIONÁRIO: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
+	idfuncionario.pack()
+	idfuncionario.place(relx=0.4, rely=0.6, anchor="center")
+	caixa_idfuncionario = tk.Entry(petshop, width=60)
+	caixa_idfuncionario.pack()
+	caixa_idfuncionario.place(relx=0.57, rely=0.6, anchor="center")
 
 	botao_cadastrar = tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
 	botao_cadastrar.pack()
-	botao_cadastrar.place(relx=0.4, rely=0.6, anchor="center")
+	botao_cadastrar.place(relx=0.4, rely=0.7, anchor="center")
 
 	botao_cadastrar.bind("<Enter>", lambda event: botao_cadastrar.config(bg='#000842', fg='white'))
 	botao_cadastrar.bind("<Leave>", lambda event: botao_cadastrar.config(bg='white', fg='#000842',))
 
 	botao_limpar = tk.Button(petshop, text="LIMPAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
 	botao_limpar.pack()
-	botao_limpar.place(relx=0.5, rely=0.6, anchor="center")
+	botao_limpar.place(relx=0.5, rely=0.7, anchor="center")
 
 	botao_limpar.bind("<Enter>", lambda event: botao_limpar.config(bg='#000842', fg='white'))
 	botao_limpar.bind("<Leave>", lambda event: botao_limpar.config(bg='white', fg='#000842',))
 
 	botao_voltar = tk.Button(petshop, text="VOLTAR AO MENU", width='20', height='0', font="Arial 10 bold", fg="#000842", command=voltar)
 	botao_voltar.pack()
-	botao_voltar.place(relx=0.6, rely=0.6, anchor="center")
+	botao_voltar.place(relx=0.6, rely=0.7, anchor="center")
 
 	botao_voltar.bind("<Enter>", lambda event: botao_voltar.config(bg='#000842', fg='white'))
 	botao_voltar.bind("<Leave>", lambda event: botao_voltar.config(bg='white', fg='#000842',))
