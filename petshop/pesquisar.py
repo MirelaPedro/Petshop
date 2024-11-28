@@ -15,7 +15,7 @@ colunas_proprietario= ['id', 'nome', 'telefone', 'cep', 'todos']
 colunas_animal = ['id', 'nome', 'especie', 'raca', 'peso', 'altura', 'idade', 'cor', 'idproprietario', 'todos']
 colunas_banho = ['id', 'horario', 'data', 'tipo', 'valor', 'idanimal', 'idfuncionario', 'todos']
 
-def pesquisar_funcionario(tabela, frame, checkboxes, termo):
+def pesquisar(tabela, frame, checkboxes, termo):
 
     if tabela == 'funcionario':
         colunas = colunas_funcionario
