@@ -25,7 +25,7 @@ def verificar(tabela, id):
 colunas_funcionario = ['id', 'nome', 'telefone', 'cargo', 'salario', 'cep']
 colunas_proprietario= ['id', 'nome', 'telefone', 'cep']
 colunas_animal = ['id', 'nome', 'especie', 'raca', 'peso', 'altura', 'idade', 'cor', 'idproprietario']
-colunas_banho = ['id', 'data', 'horario', 'tipo', 'valor', 'idanimal', 'idfuncionario']
+colunas_banho = ['id', 'data', 'horário', 'tipo', 'valor', 'idanimal', 'idfuncionario']
 
 #FUNÇÃO PARA CADASTRAR
 def cadastrar(tabela, info):
@@ -62,29 +62,22 @@ def cadastrar(tabela, info):
 
             values = ''
             into = ''
-            for i in info:
-                print(f'Len: {len(info)}')
-                print(f'Index: {info.index(i)+1}')
-                print(f'I: {i}')
-                if len(info) != info.index(i)+1:
-                    if type(i) == str:
-                        values += f'"{i}", '
-                        into += f'{colunas[info.index(i)]}, '
-                    else:
-                        values += f'{i}, '
-                        into += f'{colunas[info.index(i)]}, '
+            # Usando enumerate para obter o índice e o valor
+            for index, i in enumerate(info):
+                if isinstance(i, str):
+                    # Para valores de texto, usar aspas simples
+                    values += f"'{i}'"
                 else:
-                    if type(i) == str:
-                        values += f'"{i}"'
-                        into += f'{colunas[info.index(i)]}'
-                    else:
-                        values += f'{i}'
-                        into += f'{colunas[info.index(i)]}'
+                    # Para outros tipos de valores (como números), não usar aspas
+                    values += str(i)
+                
+                # Adicionando a coluna correspondente
+                into += colunas[index]
 
-                print(values)
-                print(into)
-            
-            print(values)
+                # Se não for o último item, adicionar vírgula para continuar a consulta
+                if index != len(info) - 1:
+                    values += ', '
+                    into += ', '
 
             insert = f'insert into {tabela}({into}) values({values});'
             print(insert)

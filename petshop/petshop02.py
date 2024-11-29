@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import *
 import cadastrar
+import alterar
 
 ########### MENU PRINCIPAL
 def voltar():
@@ -279,19 +280,19 @@ def cadastrar_banho():
 	caixa_codigo.pack()
 	caixa_codigo.place(relx=0.55, rely=0.2, anchor="center")
 
-	horario = tk.Label(petshop, text="HORÁRIO: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
-	horario.pack()
-	horario.place(relx=0.4, rely=0.25, anchor="center")
-	caixa_horario = tk.Entry(petshop, width=73)
-	caixa_horario.pack()
-	caixa_horario.place(relx=0.55, rely=0.25, anchor="center")
-
 	data = tk.Label(petshop, text="DATA: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
 	data.pack()
-	data.place(relx=0.4, rely=0.3, anchor="center")
-	caixa_data = tk.Entry(petshop, width=75)
+	data.place(relx=0.4, rely=0.25, anchor="center")
+	caixa_data = tk.Entry(petshop, width=73)
 	caixa_data.pack()
-	caixa_data.place(relx=0.55, rely=0.3, anchor="center")
+	caixa_data.place(relx=0.55, rely=0.25, anchor="center")
+
+	horario = tk.Label(petshop, text="HORÁRIO: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
+	horario.pack()
+	horario.place(relx=0.4, rely=0.3, anchor="center")
+	caixa_horario = tk.Entry(petshop, width=75)
+	caixa_horario.pack()
+	caixa_horario.place(relx=0.55, rely=0.3, anchor="center")
 
 	tipo = tk.Label(petshop, text="TIPO: ", font="Arial 20 bold", bg="lightblue", fg="#000842" )
 	tipo.pack()
@@ -481,7 +482,8 @@ def alterar_funcionario():
 	caixa_cep.pack()
 	caixa_cep.place(relx=0.55, rely=0.45, anchor="center")
 
-	botao_cadastrar= tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+	botao_cadastrar= tk.Button(petshop, text="ALTERAR", width='20', height='0', font="Arial 10 bold", fg="#000842", command= lambda: alterar.alterando('funcionario', int(caixa_codigo.get()) if caixa_codigo.get() else None, modifica= [int(caixa_telefone.get()) if caixa_telefone.get() else None, caixa_cargo.get() if caixa_cargo.get() else None, float(caixa_salario.get()) if caixa_salario.get() else None, int(caixa_cep.get()) if caixa_cep.get() else None]))
+
 	botao_cadastrar.pack()
 	botao_cadastrar.place(relx=0.4, rely=0.6, anchor="center")
 
@@ -531,7 +533,7 @@ def alterar_clientes():
 	caixa_cep = tk.Entry(petshop, width=75)
 	caixa_cep.pack()
 	caixa_cep.place(relx=0.55, rely=0.35, anchor="center")
-	botao_cadastrar = tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+	botao_cadastrar = tk.Button(petshop, text="ALTERAR", width='20', height='0', font="Arial 10 bold", fg="#000842", command= lambda: alterar.alterando('proprietario', int(caixa_codigo.get()) if caixa_codigo.get() else None, modifica= [int(caixa_telefone.get()) if caixa_telefone.get() else None, int(caixa_cep.get()) if caixa_cep.get() else None]))
 	botao_cadastrar.pack()
 	botao_cadastrar.place(relx=0.4, rely=0.4, anchor="center")
 
@@ -595,7 +597,7 @@ def alterar_animais():
 	caixa_idproprietario.pack()
 	caixa_idproprietario.place(relx=0.57, rely=0.45, anchor="center")
 
-	botao_cadastrar = tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+	botao_cadastrar = tk.Button(petshop, text="ALTERAR", width='20', height='0', font="Arial 10 bold", fg="#000842", command= lambda: alterar.alterando('animal', int(caixa_codigo.get()) if caixa_codigo.get() else None, modifica= [float(caixa_peso.get()) if caixa_peso.get() else None, float(caixa_altura.get()) if caixa_altura.get() else None, int(caixa_idade.get()) if caixa_idade.get() else None, int(caixa_idproprietario.get()) if caixa_idproprietario.get() else None]))
 	botao_cadastrar.pack()
 	botao_cadastrar.place(relx=0.4, rely=0.6, anchor="center")
 
@@ -673,7 +675,7 @@ def alterar_banho():
 	caixa_idfuncionario.pack()
 	caixa_idfuncionario.place(relx=0.57, rely=0.5, anchor="center")
 
-	botao_cadastrar = tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+	botao_cadastrar = tk.Button(petshop, text="ALTERAR", width='20', height='0', font="Arial 10 bold", fg="#000842", command= lambda: alterar.alterando('banho', int(caixa_codigo.get()) if caixa_codigo.get() else None, modifica= [int(caixa_horario.get()) if caixa_horario.get() else None, caixa_data.get() if caixa_data.get() else None, float(caixa_tipo.get()) if caixa_tipo.get() else None, int(caixa_valor.get()) if caixa_valor.get() else None, float(caixa_idanimal.get()) if caixa_idanimal.get() else None, int(caixa_idfuncionario.get()) if caixa_idfuncionario.get() else None]))
 	botao_cadastrar.pack()
 	botao_cadastrar.place(relx=0.4, rely=0.6, anchor="center")
 
