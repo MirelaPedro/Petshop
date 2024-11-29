@@ -3,6 +3,7 @@ from tkinter import *
 import cadastrar
 import alterar
 import pesquisar
+import deletar
 
 ########### MENU PRINCIPAL
 def voltar():
@@ -962,7 +963,7 @@ def excluir_funcionario():
 	caixa_pesquisa.pack()
 	caixa_pesquisa.place(relx=0.45, rely=0.3, anchor="center")
 
-	botao_excluir = tk.Button(petshop, text="EXCLUIR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+	botao_excluir = tk.Button(petshop, text="EXCLUIR", width='20', height='0', font="Arial 10 bold", fg="#000842", command= lambda: deletar.deletar('funcionario', int(caixa_pesquisa.get()) if caixa_pesquisa.get() else None))
 	botao_excluir.pack()
 	botao_excluir.place(relx=0.7, rely=0.3, anchor="center")
 
@@ -987,7 +988,7 @@ def excluir_clientes():
 	caixa_pesquisa.pack()
 	caixa_pesquisa.place(relx=0.45, rely=0.3, anchor="center")
 
-	botao_excluir = tk.Button(petshop, text="EXCLUIR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+	botao_excluir = tk.Button(petshop, text="EXCLUIR", width='20', height='0', font="Arial 10 bold", fg="#000842", command= lambda: deletar.deletar('proprietario', int(caixa_pesquisa.get()) if caixa_pesquisa.get() else None))
 	botao_excluir.pack()
 	botao_excluir.place(relx=0.7, rely=0.3, anchor="center")
 
@@ -1012,7 +1013,7 @@ def excluir_animais():
 	caixa_pesquisa.pack()
 	caixa_pesquisa.place(relx=0.45, rely=0.3, anchor="center")
 	
-	botao_excluir = tk.Button(petshop, text="EXCLUIR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+	botao_excluir = tk.Button(petshop, text="EXCLUIR", width='20', height='0', font="Arial 10 bold", fg="#000842", command= lambda: deletar.deletar('animal', int(caixa_pesquisa.get()) if caixa_pesquisa.get() else None))
 	botao_excluir.pack()
 	botao_excluir.place(relx=0.7, rely=0.3, anchor="center")
 
@@ -1038,7 +1039,7 @@ def excluir_banho():
 	caixa_pesquisa.pack()
 	caixa_pesquisa.place(relx=0.45, rely=0.3, anchor="center")
 
-	botao_excluir = tk.Button(petshop, text="EXCLUIR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+	botao_excluir = tk.Button(petshop, text="EXCLUIR", width='20', height='0', font="Arial 10 bold", fg="#000842", command= lambda: deletar.deletar('banho', int(caixa_pesquisa.get()) if caixa_pesquisa.get() else None))
 	botao_excluir.pack()
 	botao_excluir.place(relx=0.7, rely=0.3, anchor="center")
 
