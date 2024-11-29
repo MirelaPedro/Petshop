@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import *
+import cadastrar
 
 ########### MENU PRINCIPAL
 def voltar():
@@ -127,7 +128,12 @@ def voltar():
 	botao_financas4.bind("<Enter>", lambda event: botao_financas4.config(bg='#000842', fg='white'))
 	botao_financas4.bind("<Leave>", lambda event: botao_financas4.config(bg='white', fg='#000842',))
 
-##############DEF'S CADASTRAR		
+##############DEF'S CADASTRAR
+#
+def cadastro(tabela, info):
+	print(tabela)
+	print(info)
+
 def cadastrar_funcionario():
 	for widget in petshop.winfo_children():
 		widget.destroy()
@@ -178,7 +184,8 @@ def cadastrar_funcionario():
 	caixa_cep.pack()
 	caixa_cep.place(relx=0.55, rely=0.45, anchor="center")
 
-	botao_cadastrar= tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+
+	botao_cadastrar= tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842", command= lambda: cadastrar.cadastrar('funcionario', info = [int(caixa_codigo.get()), caixa_nome.get(), int(caixa_telefone.get()) ,caixa_cargo.get(), float(caixa_salario.get()), int(caixa_cep.get())]))
 	botao_cadastrar.pack()
 	botao_cadastrar.place(relx=0.4, rely=0.6, anchor="center")
 
@@ -236,7 +243,7 @@ def cadastrar_clientes():
 	caixa_cep.pack()
 	caixa_cep.place(relx=0.55, rely=0.35, anchor="center")
 
-	botao_cadastrar = tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+	botao_cadastrar = tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842", command= lambda: cadastrar.cadastrar('proprietario', info = [int(caixa_codigo.get()), caixa_nome.get(), int(caixa_telefone.get()), int(caixa_cep.get())]))
 	botao_cadastrar.pack()
 	botao_cadastrar.place(relx=0.4, rely=0.4, anchor="center")
 
@@ -314,7 +321,7 @@ def cadastrar_banho():
 	caixa_idfuncionario.pack()
 	caixa_idfuncionario.place(relx=0.57, rely=0.5, anchor="center")
 
-	botao_cadastrar = tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+	botao_cadastrar = tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842", command= lambda: cadastrar.cadastrar('banho', info = [int(caixa_codigo.get()), caixa_data.get(), caixa_horario.get(), caixa_tipo.get(), float(caixa_valor.get()), int(caixa_idanimal.get()), int(caixa_idfuncionario.get())]))
 	botao_cadastrar.pack()
 	botao_cadastrar.place(relx=0.4, rely=0.6, anchor="center")
 
@@ -407,7 +414,7 @@ def cadastrar_animais():
 	caixa_idproprietario.place(relx=0.57, rely=0.6, anchor="center")
 
 
-	botao_cadastrar = tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842")
+	botao_cadastrar = tk.Button(petshop, text="CADASTRAR", width='20', height='0', font="Arial 10 bold", fg="#000842", command= lambda: cadastrar.cadastrar('animal', info = [int(caixa_codigo.get()), caixa_nome.get(), caixa_especie.get(), caixa_raca.get(), float(caixa_peso.get()), float(caixa_altura.get()), int(caixa_idade.get()), caixa_cor.get(), int(caixa_idproprietario.get())]))
 	botao_cadastrar.pack()
 	botao_cadastrar.place(relx=0.4, rely=0.65, anchor="center")
 

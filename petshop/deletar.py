@@ -6,7 +6,7 @@ conexao_banco = mysql.connector.connect(
     host = 'localhost',
     user = 'root',
     password = '',
-    database = 'clinica_petshop'
+    database = 'petshop'
 )
 
 cursor = conexao_banco.cursor()
